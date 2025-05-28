@@ -517,7 +517,9 @@ public class Inventario extends javax.swing.JPanel {
                     int nuevaCantidad = cantidadActual + cantidadAgregar;
 
                     
-                    String nuevaLinea = codigo + ";" + nombre + ";" + valor + ";" + nuevaCantidad;
+                    String vecesCompradas = partes.length > 4 ? partes[4] : "0";
+                    String nuevaLinea = codigo + ";" + nombre + ";" + valor + ";" + nuevaCantidad + ";" + vecesCompradas;
+
                     nuevasLineas.add(nuevaLinea);
 
                     

@@ -482,10 +482,9 @@ public class Inventario extends javax.swing.JPanel {
 
     private void AñadirStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AñadirStockMouseClicked
         // Aqui se debe añadir un popup que aparezca cuando el usuario de click al icono el cual le solicite que ingrese el codigo del producto para posteriormente solicitarle la cantidad de stock que desea añadir en otro popup
-        // Solicitar código del producto
         String codigo = JOptionPane.showInputDialog(this, "Ingrese el código del producto:");
         if (codigo == null || codigo.trim().isEmpty()) {
-            return; // Usuario canceló o no ingresó nada
+            return; 
         }
 
         boolean productoEncontrado = false;
@@ -517,19 +516,19 @@ public class Inventario extends javax.swing.JPanel {
                     int cantidadAgregar = Integer.parseInt(entradaCantidad);
                     int nuevaCantidad = cantidadActual + cantidadAgregar;
 
-                    // Crear la nueva línea
+                    
                     String nuevaLinea = codigo + ";" + nombre + ";" + valor + ";" + nuevaCantidad;
                     nuevasLineas.add(nuevaLinea);
 
-                    // También actualizar la fila en la tabla
+                    
                     for (int i = 0; i < jTable1.getRowCount(); i++) {
                         if (jTable1.getValueAt(i, 0).equals(codigo)) {
-                            jTable1.setValueAt(nuevaCantidad, i, 3); // Columna 3 = stock
+                            jTable1.setValueAt(nuevaCantidad, i, 3);
                             break;
                         }
                     }
                 } else {
-                    nuevasLineas.add(linea); // Mantener línea original
+                    nuevasLineas.add(linea); 
                 }
             }
 
